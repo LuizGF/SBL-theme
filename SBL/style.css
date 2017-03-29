@@ -1,0 +1,571 @@
+/*
+Theme Name: SBlog
+Description: A prototype of wordpress theme
+Author: Luiz
+*/
+
+/*
+ 1 - CSS RESET
+ 2 - RESIZING AND POSITIONING
+ 3 - TYPOGRAPHY
+ 4 - VISUAL
+*/
+
+/* 
+   CSS RESET
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*
+---------------------------------------------------------------------------------------------
+	2.1 RESIZING
+---------------------------------------------------------------------------------------------
+*/
+
+.custom-logo {
+	width: 250px;
+	height: auto;
+}
+
+#site_banner {
+	width: 100%;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+@media screen and (min-width: 780px){
+	#site_banner { background-size: 100% 100%; }
+
+	#page { width: 95%; }
+}
+
+#main_menu {
+	width: 100%;
+	height: 100px;
+}
+
+@media screen and (min-width: 780px) {
+	#posts {
+		width: 70%;
+	}
+}
+@media screen and (max-width: 780px) {
+	#posts {
+		width: 95%;
+	}
+}
+
+@media screen and (min-width: 780px) {
+	#conteiner-sidebar {
+		width: 30%;
+	
+	}
+}
+@media screen and (max-width: 780px) {
+	#conteiner-sidebar {
+		width: 95%;
+
+	}
+}
+@media screen and (min-width: 780px) {
+	.post, .widget, #one_post {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 780px) {
+	.post, .widget {
+		width: 100%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+.post_preview_text_content {
+	width: 75%;
+	height: auto;
+}
+.post {
+	overflow: hidden;
+}
+.thumb {	
+	width: 700px;
+	height: 200px;
+}
+.menu-item {
+	width: 125px;
+}
+#page {
+	padding-bottom: 20px;
+	min-height: 750px;
+	z-index: 100;
+	overflow: auto;
+}
+@media screen and (min-width: 780px) {
+	.widget h4, .widget li {
+		width: 100%;;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+@media screen and (max-width: 780px) {
+	.widget h4, .widget li {
+		width: 100%;;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+.widget {
+	width: 80%;
+}
+#footer {
+	width: 100%;
+	height: 100px;
+}
+/*
+---------------------------------------------------------------------------------------------
+	2.2 POSITIONING
+---------------------------------------------------------------------------------------------
+*/
+.custom-logo {
+	/*this makes the image align on center*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	position: relative;
+	top: 10px;
+	
+	margin-bottom: 15px;
+	
+	z-index: 25;
+}
+
+.site_identity h2, .site_identity h4 {
+	position: relative;	
+	text-align: center;
+	z-index: 2;
+}
+
+#site_banner {
+	position: relative;
+	z-index: 0;
+}
+.site_identity {
+	top: 10px;
+	position: absolute;
+	z-index: 999;
+	display: block;
+	width: 100%;
+}
+#main_menu {
+	position: absolute;
+	top: 300px;
+}
+.menu-main_menu-container {
+	width: 100%;
+	text-align: center;
+}
+#menu-main_menu li {
+	display: inline-block;
+}
+#menu-main_menu {
+	padding-top: 50px;
+	width: 100%;
+
+}
+/*
+@media screen and (max-width: 1280px) {
+	#menu-main_menu {
+		padding-left: 20%;
+		padding-right: 0px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+@media screen and (max-width: 780px) {
+	#menu-main_menu {
+		padding-left: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 100%;
+	}
+}*/
+
+#page {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+}
+
+#posts {
+	display: inline-block;
+	position: relative;
+	margin-right: 0px;
+	float: left;	
+	clear: right;
+}
+
+@media screen and (max-width: 780px) {
+	#posts, .widget {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+#conteiner-sidebar {
+	display: inline-block;
+	position: relative;
+	float: left;
+}
+/*
+@media screen and (max-width: 780px) {
+	#conteiner-sidebar {
+		display: block;
+		position: relative;
+	}
+}*/
+
+#posts, #conteiner-sidebar {
+	padding-top: 20px;
+}
+
+.post_preview_text_content {
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.post, .widget, #one_post{
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+.thumb {	
+	margin-left: 0px;
+}
+.post_content {
+	margin-left: 20px;
+}
+label {
+	display: block;
+}
+.post-categories li {
+	display: inline-block;
+}
+.post-categories a {
+	padding: 3px 3px 3px 3px;
+}
+
+.post ul {
+	display: inline-block;
+}
+.post_preview_text_content p {
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+.widget h4 {
+	padding-left: 15px;
+}
+.widget li {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+.screen-reader-text {
+	display: none;
+}
+#searchform #s {
+	width: 50%;
+}
+
+h1 {
+	padding-top: 30px;
+}
+#one_post {
+	padding-top: 30px;
+}
+#page {
+	padding-top: 10px;
+}
+#one_post h6{
+	margin-bottom: 30px;
+}
+#one_post p {
+	padding-bottom: 10px;
+}
+#footer h6 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	padding-top: 50px;
+}
+.page_content {
+	padding-top: 30px;
+}
+/*
+-------------------------------------------------------------------------------------------------
+	3 TYPOGRAPHY
+-------------------------------------------------------------------------------------------------
+*/
+
+.site_identity h2 {
+	font-family: "Trebuchet MS";
+	font-size: 40px;
+	font-weight: bold;
+}
+.site_identity h4 {
+	font-size: 15px;
+}
+.menu-item a {
+	font-family: arial;
+	color: white;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+}
+.menu-item {
+	text-align: center;
+}
+
+.post h2 {
+	font-size: 40px;
+	font-weight: bold;
+	color: #028ad8;
+	font-family: verdana;
+}
+
+.post-categories a {
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+
+h6, .post-categories {
+	text-transform: uppercase;
+	font-size: 10px;
+	display: inline-block;
+	color: white;
+	font-weight: bold;
+}
+
+.post_preview_text_content p, #one_post p {
+	color: #4f4f4f;
+	font-family: Lucida Sans Unicode;
+	font-size: 20px;
+}
+
+.read_more_button{
+	text-transform: uppercase;
+	font-weight: 20px;
+	text-decoration: none;
+	color: white;
+}
+.widget h4 {
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	text-transform: uppercase;
+	font-family: verdana;
+}
+.widget li a{
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	font-family: tahoma;
+}
+h1{
+	margin-top: 20px;	
+	font-size: 50px;
+	font-weight: bold;
+	font-family: verdana;
+}
+#footer h6 {
+	font-family: sans-serif;
+	/*font-weight: bold;*/
+	font-size: 20px;
+	color: white;
+}
+/*
+-------------------------------------------------------------------------------------------------
+	4 VISUAL
+-------------------------------------------------------------------------------------------------
+*/
+body {background-color: #8e8e8e;}
+
+#page, .post_preview_text_content {
+	background-color: #f9f9f9;
+}
+
+#main_menu {
+	background: linear-gradient(to top, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0));
+}
+
+.post {
+	border-style: solid;	
+	border-width: 2px;
+	border-color: #cecece;
+	border-radius: 10px;
+}
+.post_preview_text_content {
+	border-radius: 0px 80px 80px 0px;
+}
+	
+
+.post-categories a {
+	background-color: black;
+	border-radius: 5px;
+}
+
+h6 {
+	background-color: black;
+	padding: 3px 3px 3px 3px;
+	border-radius: 5px;
+}
+.read_more_button {
+	background-color: #509fc9;
+	padding: 5px 5px 5px 5px;
+	border-radius: 7px;
+}
+.widget h4 {
+	background-color: #509fc9;
+}
+.widget li {
+	border-style: none none solid none;
+	border-width: 1px;
+	border-color: #cecece;
+}	
+
+#footer {
+	background-color: #0a0a0a;
+}
+
+/* IMPLEMENTATION OF HIDDEN MAIN MENU FOR MOBILES */
+
+
+
+/*
+.mob_menu_icon {
+	width: 0px;
+	height: 0px;
+	position: fixed;
+}
+*/
+@media screen and (min-width: 480px) {
+	.mob_menu_icon {display: none;}
+}
+
+@media screen and (max-width: 480px) {
+	#main_menu {
+		z-index: 998;
+		position: fixed;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		top: 60px;
+		left: 5%;
+		background-color: #262b38;
+		opacity: 0.9;
+		background: linear-gradient(#262b38, #262b38);
+		height: auto;
+		border-radius: 10px;
+	}
+	#menu-main_menu {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	#menu-main_menu li{
+		padding-top: 10px;
+		padding-bottom: 10px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#main_menu {opacity: 0;}
+	
+	.mob_menu_icon {
+		z-index: 999;
+		position: fixed;
+		top: 10px;
+		left: 10px;
+		width: 40px;
+		height: 40px;
+	}
+	
+	
+}
+
+
+
+/*
+------------------------------------------------------------------------------------------------------
+	NOT PREPARED RESOURCES
+------------------------------------------------------------------------------------------------------
+*/
+.thumb {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
