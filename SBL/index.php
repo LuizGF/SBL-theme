@@ -10,7 +10,7 @@
          <h6>Postado em: <?php the_time('d - F - Y  h:i'); ?></h6>
          <?php the_category(); ?>
         </div><!-- post_title -->
-        <?php the_excerpt(); ?>
+        <?php excerpt(25); ?>
         <a class="read_more_button" href="<?php the_permalink(); ?>">LER MAIS</a>
        </div><!-- post preview text content -->
       </div><!-- post -->

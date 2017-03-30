@@ -1,5 +1,5 @@
  <?php get_header(); ?>
-  <div id="page">
+  <div id="page" class="one_page">
    <?php if(have_posts()) : while( have_posts()) : the_post(); ?>
     <img class="thumb" src="<?php the_post_thumbnail_url(); ?>" style="width: 90%; padding-top: 20px;">
     <div class="post_content">

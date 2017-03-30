@@ -1,4 +1,18 @@
 <?php
+
+	/*apply a limit of words in the excerpt */
+	/*I got it on: http://smallenvelop.com/limit-post-excerpt-length-in-wordpress/ cause i'm a lazy one */
+	function excerpt($limit) {		
+		$excerpt = explode(' ', the_excerpt(), $limit);
+		if (count($excerpt)>=$limit) {
+		  array_pop($excerpt);
+		  $excerpt = implode(" ",$excerpt).'...';
+		} else {
+		  $excerpt = implode(" ",$excerpt);
+		}	
+		$excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+		return $excerpt;
+	}
 /* WIDGETS */
  
 if (function_exists('register_sidebar'))
@@ -35,5 +49,4 @@ if (function_exists('register_sidebar'))
 
 	add_action('after_setup_theme', 'theme_prefix_setup');
 ?>
-
 

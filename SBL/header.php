@@ -14,7 +14,11 @@
 
    <div class="site_identity">
     <?php if( function_exists("the_custom_logo") ): ?>
-     <?php the_custom_logo(); ?>
+     <?php if(has_custom_logo()) : ?> 
+      <?php the_custom_logo(); ?>
+     <?php else : ?>
+      <div class="empty_space"></div>
+     <?php endif; ?>
     <?php endif; ?>
     <h2 style="color: #<?php header_textcolor(); ?>"><?php bloginfo("title"); ?></h2>
     <h4 style="color: #<?php header_textcolor(); ?>"><?php bloginfo("description"); ?></h4>
@@ -30,7 +34,7 @@
    
    <script type="text/javascript">
 	function open_mobile_button() {
-		menu = document.getElementsByClassName("menu-main_menu-container")[0];
+		menu = document.getElementById('main_menu');
 		if(menu.style.opacity =='0') {menu.style.opacity = '0.9';}
 		else {menu.style.opacity = '0';}
 	}

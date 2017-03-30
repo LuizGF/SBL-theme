@@ -1,6 +1,6 @@
 /*
-Theme Name: SBlog
-Description: A prototype of wordpress theme
+Theme Name: SBL
+Description: A personal project completely free wordpress theme
 Author: Luiz
 */
 
@@ -9,6 +9,8 @@ Author: Luiz
  2 - RESIZING AND POSITIONING
  3 - TYPOGRAPHY
  4 - VISUAL
+ 5 - MOBILE
+ 6 - EFFECTS
 */
 
 /* 
@@ -83,42 +85,45 @@ table {
 @media screen and (min-width: 780px){
 	#site_banner { background-size: 100% 100%; }
 
-	#page { width: 95%; }
+	#page { width: 97.5%; }
 }
 
 #main_menu {
 	width: 100%;
-	height: 100px;
+	height: 400px;
 }
 
-@media screen and (min-width: 780px) {
-	#posts {
-		width: 70%;
-	}
+
+#posts {
+	width: 70%;
 }
+
 @media screen and (max-width: 780px) {
 	#posts {
 		width: 95%;
 	}
 }
 
-@media screen and (min-width: 780px) {
-	#conteiner-sidebar {
-		width: 30%;
-	
-	}
+
+#conteiner-sidebar {
+	width: 30%;
+
 }
+
 @media screen and (max-width: 780px) {
 	#conteiner-sidebar {
 		width: 95%;
 
 	}
 }
-@media screen and (min-width: 780px) {
-	.post, .widget, #one_post {
-		width: 90%;
-	}
+
+.post{
+	width: 96%;
 }
+#one_post {
+	width: 70%;
+}
+
 @media screen and (max-width: 780px) {
 	.post, .widget {
 		width: 100%;
@@ -128,22 +133,23 @@ table {
 	}
 }
 .post_preview_text_content {
-	width: 75%;
-	height: auto;
+	width: 95%;
+	/*min-height: 250px;*/
 }
 .post {
-	overflow: hidden;
+	overflow: auto;
+	/*min-height: 250px;*/
 }
 .thumb {	
 	width: 700px;
 	height: 200px;
 }
 .menu-item {
-	width: 125px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 #page {
 	padding-bottom: 20px;
-	min-height: 750px;
 	z-index: 100;
 	overflow: auto;
 }
@@ -162,11 +168,16 @@ table {
 	}
 }
 .widget {
-	width: 80%;
+	width: 92.5%;
 }
 #footer {
 	width: 100%;
 	height: 100px;
+}
+.empty_space {
+	display: block;
+	position: relative;
+	height: 150px;
 }
 /*
 ---------------------------------------------------------------------------------------------
@@ -206,18 +217,17 @@ table {
 }
 #main_menu {
 	position: absolute;
-	top: 300px;
+	top: 0px;
 }
 .menu-main_menu-container {
-	width: 100%;
 	text-align: center;
+	margin-top: 300px;
 }
 #menu-main_menu li {
 	display: inline-block;
 }
 #menu-main_menu {
 	padding-top: 50px;
-	width: 100%;
 
 }
 /*
@@ -246,10 +256,9 @@ table {
 	margin-top: 0px;
 }
 
-#posts {
+#posts, #one_post {
 	display: inline-block;
 	position: relative;
-	margin-right: 0px;
 	float: left;	
 	clear: right;
 }
@@ -280,14 +289,18 @@ table {
 }
 
 .post_preview_text_content {
-	padding-left: 20px;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	padding-left: 20px;
 }
 
-.post, .widget, #one_post{
+.post, #one_post{
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 10px;
+}
+
+.widget {
 	margin-top: 10px;
 }
 .thumb {	
@@ -312,6 +325,7 @@ label {
 .post_preview_text_content p {
 	margin-top: 15px;
 	margin-bottom: 20px;
+	margin-right: 50px;
 }
 .widget h4 {
 	padding-left: 15px;
@@ -353,6 +367,16 @@ h1 {
 .page_content {
 	padding-top: 30px;
 }
+.post {
+	background-position: top right;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.read_more_button {
+	position: relative;
+	float: bottom;
+}
+
 /*
 -------------------------------------------------------------------------------------------------
 	3 TYPOGRAPHY
@@ -380,7 +404,7 @@ h1 {
 
 .post h2 {
 	font-size: 40px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	color: #028ad8;
 	font-family: verdana;
 }
@@ -398,8 +422,11 @@ h6, .post-categories {
 	color: white;
 	font-weight: bold;
 }
+.post h6 {
+	font-size: 10.5px;
+}
 
-.post_preview_text_content p, #one_post p {
+.post_preview_text_content p, #one_post p, .page_content p{
 	color: #4f4f4f;
 	font-family: Lucida Sans Unicode;
 	font-size: 20px;
@@ -407,13 +434,17 @@ h6, .post-categories {
 
 .read_more_button{
 	text-transform: uppercase;
-	font-weight: 20px;
+	font-weight: bold;
 	text-decoration: none;
-	color: white;
+	font-size: 18px;
+	color: #8f8f8f;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .widget h4 {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 25px;
 	color: white;
 	text-transform: uppercase;
 	font-family: verdana;
@@ -430,12 +461,16 @@ h1{
 	font-weight: bold;
 	font-family: verdana;
 }
+.one_page h1 {
+	text-align: center;
+}
 #footer h6 {
 	font-family: sans-serif;
 	/*font-weight: bold;*/
 	font-size: 20px;
 	color: white;
 }
+
 /*
 -------------------------------------------------------------------------------------------------
 	4 VISUAL
@@ -448,7 +483,7 @@ body {background-color: #8e8e8e;}
 }
 
 #main_menu {
-	background: linear-gradient(to top, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0));
+	background: linear-gradient(to top, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 0) 80%);
 }
 
 .post {
@@ -458,40 +493,55 @@ body {background-color: #8e8e8e;}
 	border-radius: 10px;
 }
 .post_preview_text_content {
-	border-radius: 0px 80px 80px 0px;
+	background: linear-gradient(to right, #f9f9f9 70%, rgba(0,0,0,0));
 }
 	
 
 .post-categories a {
-	background-color: black;
-	border-radius: 5px;
+	background-color: #4f4f4f;
+	/*border-radius: 5px;*/
 }
 
-h6 {
-	background-color: black;
+.post h6, #one_post h6 {
+	background-color: #4f4f4f;
 	padding: 3px 3px 3px 3px;
-	border-radius: 5px;
-}
+	/*border-radius: 5px;*/
+}/*
 .read_more_button {
 	background-color: #509fc9;
-	padding: 5px 5px 5px 5px;
+	padding: 7px 10px 7px 10px;
 	border-radius: 7px;
+}*/
+.read_more_button {
+	border-style: solid;
+	border-width: 2px;
+	border-color: #dedede;
+	display: block;
+	width: 120px;
 }
 .widget h4 {
-	background-color: #509fc9;
+	color: #509fc9;
+	border-style: none none solid none;
+	border-color: #509fc9;
+	border-width: 2px;
 }
 .widget li {
 	border-style: none none solid none;
 	border-width: 1px;
 	border-color: #cecece;
-}	
+}
+
+#searchsubmit {value: xx}
 
 #footer {
 	background-color: #0a0a0a;
 }
 
-/* IMPLEMENTATION OF HIDDEN MAIN MENU FOR MOBILES */
-
+/*
+--------------------------------------------------------------------------------------------------------------
+	5 MOBILE SCREENS ADAPTATIONS
+--------------------------------------------------------------------------------------------------------------
+*/
 
 
 /*
@@ -507,7 +557,7 @@ h6 {
 
 @media screen and (max-width: 480px) {
 	#main_menu {
-		z-index: 998;
+		z-index: 1000;
 		position: fixed;
 		width: 90%;
 		margin-left: auto;
@@ -516,20 +566,21 @@ h6 {
 		left: 5%;
 		background-color: #262b38;
 		opacity: 0.9;
-		background: linear-gradient(#262b38, #262b38);
+		padding-top: 0px;
 		height: auto;
-		border-radius: 10px;
 	}
-	#menu-main_menu {
+	.menu-main_menu-container {
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+	#main_menu ul {
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
-	#menu-main_menu li{
-		padding-top: 10px;
-		padding-bottom: 10px;
+	#main_menu li {
 		display: block;
-		margin-left: auto;
-		margin-right: auto;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 
 	#main_menu {opacity: 0;}
@@ -546,6 +597,12 @@ h6 {
 	
 }
 
+/*
+------------------------------------------------------------------------------------------------------
+	6 EFFECTS
+------------------------------------------------------------------------------------------------------
+*/
+
 
 
 /*
@@ -557,10 +614,11 @@ h6 {
 	display: none;
 }
 
-
-
-
-
+/*
+------------------------------------------------------------------------------------------------------
+	ADICIONAL ADJUSTS
+------------------------------------------------------------------------------------------------------
+*/
 
 
 
