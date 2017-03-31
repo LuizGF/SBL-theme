@@ -3,8 +3,8 @@
    <div id="posts" class="conteiner">
     <main>
      <?php if( have_posts() ) : while( have_posts() ) : the_post() ?>
-      <div class="post" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
-       <div class="post_preview_text_content">
+      <div class="post <?php if(has_post_thumbnail()) : ?>thumbnail_post<?php else :?>n_t_post<?php endif;?>" style="background-image: url(<?php the_post_thumbnail_url(); ?>);">
+       <div class="post_preview_text_content "  >
         <div class="post_title">
          <h2><?php the_title(); ?></h2>
          <h6>Postado em: <?php the_time('d - F - Y  h:i'); ?></h6>
