@@ -7,11 +7,11 @@
        <div class="post_preview_text_content "  >
         <div class="post_title">
          <h2><?php the_title(); ?></h2>
-         <h6>Postado em: <?php the_time('d - F - Y  h:i'); ?></h6>
+         <h6>Posted: <?php the_time('d - F - Y  h:i'); ?></h6>
          <?php the_category(); ?>
         </div><!-- post_title -->
         <?php excerpt(25); ?>
-        <a class="read_more_button" href="<?php the_permalink(); ?>">LER MAIS</a>
+        <a class="read_more_button" href="<?php the_permalink(); ?>">more</a>
        </div><!-- post preview text content -->
       </div><!-- post -->
      <?php endwhile ?>

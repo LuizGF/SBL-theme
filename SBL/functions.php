@@ -22,9 +22,10 @@ if (function_exists('register_sidebar'))
         'before_widget' => '<div class="widget">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
-        'after_title'   => '</h4>',
+        'after_title'   => '</h4>'
     ));
 }
+
  
 ?>
 
@@ -47,6 +48,6 @@ if (function_exists('register_sidebar'))
 
 	add_theme_support('post-thumbnails');
 
-	add_action('after_setup_theme', 'theme_prefix_setup');
+	/*add_action('after_setup_theme', 'theme_prefix_setup');*/
 ?>
 
