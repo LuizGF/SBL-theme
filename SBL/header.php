@@ -20,7 +20,7 @@
       <div class="empty_space"></div>
      <?php endif; ?>
     <?php endif; ?>
-    <h2 style="color: #<?php header_textcolor(); ?>"><?php bloginfo("title"); ?></h2>
+    <h2 <?php if(!has_custom_logo()):?>class="n_clogo" <?php endif;?>style="color: #<?php header_textcolor();?>"><?php bloginfo("title"); ?></h2>
     <h4 style="color: #<?php header_textcolor(); ?>"><?php bloginfo("description"); ?></h4>
    </div> <!--site identity-->
     
@@ -35,8 +35,14 @@
    <script type="text/javascript">
 	function open_mobile_button() {
 		menu = document.getElementById('main_menu');
-		if(menu.style.opacity =='0') {menu.style.opacity = '0.9';}
-		else {menu.style.opacity = '0';}
+		if(menu.style.opacity =='0') {
+			menu.style.opacity = '0.9';
+			menu.style.zIndex = '1000'
+		}
+		else {
+			menu.style.opacity = '0';
+			menu.style.zIndex = -1;
+		}
 	}
    </script>
    <img class="mob_menu_icon" src="/wp-content/themes/SBL/mob_menu_icon.png" onclick="open_mobile_button()">

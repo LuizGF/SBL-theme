@@ -9,7 +9,7 @@
        <h6>postado em: <?php the_time('d - F- Y  h:i'); ?></h6>
        <?php the_category(); ?>
        <?php the_content() ?>
-       <h6>TAGS: <?php the_tags(); ?></h6>
+       <div id="tags"><?php the_tags(); ?></div>
        <?php comments_template(); ?>
       </div><!-- post content -->
      <?php endwhile ?>

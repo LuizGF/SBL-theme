@@ -179,7 +179,7 @@ table {
 .empty_space {
 	display: block;
 	position: relative;
-	height: 150px;
+	height: 135px;
 }
 /*
 ---------------------------------------------------------------------------------------------
@@ -292,7 +292,7 @@ table {
 
 .post_preview_text_content {
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 	padding-left: 20px;
 }
 
@@ -345,10 +345,11 @@ label {
 }
 
 h1 {
-	padding-top: 30px;
+	padding-top: 0px;
 }
 #one_post {
-	padding-top: 30px;
+	padding-top: 0px;
+	margin-top: 0px;
 }
 #page {
 	padding-top: 10px;
@@ -377,8 +378,24 @@ h1 {
 .read_more_button {
 	position: relative;
 	float: bottom;
+	margin-bottom: 30px;
+}
+.post_preview_text_content p {
+	padding-bottom: 20px;
 }
 
+#tags {
+	margin-bottom: 30px;
+}
+.one_page .post_content {
+	display: block;	
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+p {
+	margin-top: 5px;
+}
 /*
 -------------------------------------------------------------------------------------------------
 	3 TYPOGRAPHY
@@ -389,6 +406,9 @@ h1 {
 	font-family: "Trebuchet MS";
 	font-size: 40px;
 	font-weight: bold;
+}
+.site_identity .n_clogo {
+	font-size: 60px;
 }
 .site_identity h4 {
 	font-size: 15px;
@@ -417,12 +437,13 @@ h1 {
 	font-weight: bold;
 }
 
-h6, .post-categories {
+h6, .post-categories, #tags a{
 	text-transform: uppercase;
 	font-size: 10px;
 	display: inline-block;
 	color: white;
 	font-weight: bold;
+	text-decoration: none;
 }
 .post h6 {
 	font-size: 10.5px;
@@ -472,6 +493,9 @@ h1{
 	font-size: 20px;
 	color: white;
 }
+#one_post p, #one_page p {
+	line-height: 1.5;
+}
 
 /*
 -------------------------------------------------------------------------------------------------
@@ -507,7 +531,7 @@ body {background-color: #8e8e8e;}
 	/*border-radius: 5px;*/
 }
 
-.post h6, #one_post h6 {
+.post h6, #one_post h6, #tags a {
 	background-color: #4f4f4f;
 	padding: 3px 3px 3px 3px;
 	/*border-radius: 5px;*/
@@ -521,8 +545,9 @@ body {background-color: #8e8e8e;}
 	border-style: solid;
 	border-width: 2px;
 	border-color: #dedede;
-	display: block;
-	width: 120px;
+	/*display: block;*/
+	padding-left: 20px;
+	padding-right: 20px;
 }
 .widget h4 {
 	color: #509fc9;
@@ -598,8 +623,10 @@ body {background-color: #8e8e8e;}
 		width: 40px;
 		height: 40px;
 	}
-	
-	
+	.read_more_button {
+		background-color: #509fc9;
+		color: white;
+	}
 }
 
 /*
@@ -683,6 +710,9 @@ body {background-color: #8e8e8e;}
 	.thumbnail_post h2 {
 		transition: text-shadow 0.1s ease-in-out 0s;
 	}
+	.widget:hover li a {
+		color: #acacac;
+	}	
 	.widget li a:hover {
 		color: black;
 		transition: color 0.2s ease-in-out;
@@ -701,6 +731,7 @@ body {background-color: #8e8e8e;}
 		transition-duration: 0.35s;
 		transition-timing-function: linear;
 	}
+
 	
 }
 /*
