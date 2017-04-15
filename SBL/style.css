@@ -5,7 +5,7 @@ Author: Luiz
 */
 
 /*
- 1 - CSS RESET
+ 1 - CSS RESET AND NORMALIZE
  2 - RESIZING AND POSITIONING
  3 - TYPOGRAPHY
  4 - VISUAL
@@ -14,7 +14,7 @@ Author: Luiz
 */
 
 /* 
-   CSS RESET
+   1.1 CSS RESET
    http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -64,6 +64,17 @@ table {
 	border-spacing: 0;
 }
 
+/*
+--------------------------------------------------------------------------------------------
+	1.2 NORMALIZE
+--------------------------------------------------------------------------------------------
+*/
+@media screen and (max-width: 780px) {
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
 /*
 ---------------------------------------------------------------------------------------------
 	2.1 RESIZING

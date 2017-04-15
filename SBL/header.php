@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/wp-content/themes/SBL/style.css">
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <title><?php bloginfo("page"); ?></title>
+  <title><?php wp_title('-', true, 'right'); ?><?php bloginfo('title'); ?></title>
  </head>
 
  <body>
