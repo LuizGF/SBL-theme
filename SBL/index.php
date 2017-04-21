@@ -17,6 +17,10 @@
      <?php endwhile ?>
      <?php endif; ?>
     </main>
+    <div class="pagination_links" <?php if(!get_next_posts_link() || !get_previous_posts_link()): ?>id="pagination_alone_link"<?php endif; ?> >
+      <?php if(get_previous_posts_link()) : ?><div class="left pagination_link"><?php previous_posts_link('go back'); ?></div><?php endif; ?>
+      <?php if(get_next_posts_link()) : ?><div class="right pagination_link"><?php next_posts_link('go ahead'); ?></div><?php endif; ?>
+    </div>
    </div><!--posts_conteiner-->
    <section id="sidebar">
      <?php get_sidebar(); ?>

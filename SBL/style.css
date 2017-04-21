@@ -192,6 +192,7 @@ table {
 	position: relative;
 	height: 135px;
 }
+
 /*
 ---------------------------------------------------------------------------------------------
 	2.2 POSITIONING
@@ -407,6 +408,36 @@ h1 {
 p {
 	margin-top: 5px;
 }
+
+.pagination_links {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	width: 90%;
+}
+.pagination_link {
+	display: inline-block;	
+	width: 49%;
+}
+.pagination_link a {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	color: black;
+}
+.left {float: left;}
+.right {float: right;}
+.left a{text-align: right;}
+.right a {text-align: left;}
+
+#pagination_alone_link .pagination_link{
+	width: 100%;
+}
+#pagination_alone_link a {
+	text-align: center;
+}
+	
 /*
 -------------------------------------------------------------------------------------------------
 	3 TYPOGRAPHY
@@ -507,7 +538,13 @@ h1{
 #one_post p, #one_page p {
 	line-height: 1.5;
 }
-
+.pagination_link a {
+	text-transform: uppercase;
+	color: #6a6a6a;
+	font-size: 20px;
+	text-decoration: none;
+	font-weight: bold;
+}
 /*
 -------------------------------------------------------------------------------------------------
 	4 VISUAL
@@ -576,6 +613,12 @@ body {background-color: #8e8e8e;}
 
 #footer {
 	background-color: #0a0a0a;
+}
+.pagination_link a{
+	border-color: #f9f9f9;
+	border-width: 4px;
+	border-style: none none solid none;
+	height: 30px;
 }
 
 /*
@@ -751,6 +794,18 @@ body {background-color: #8e8e8e;}
 		transition-timing-function: linear;
 	}
 
+	.pagination_link a:hover {
+		color: #509fc9;
+		border-color: #509fc9;
+		transition-property: color, border-color;
+		transition-duration: 0.35s;
+		transition-timing-function: ease-in-out;
+	}
+	.pagination_link a {
+		transition-property: color, border-color;
+		transition-duration: 0.35s;
+		transition-timing-function: ease-in-out;
+	}
 	
 }
 /*
